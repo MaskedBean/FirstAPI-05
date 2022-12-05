@@ -17,8 +17,9 @@ public class CarController {
     }
 
     @GetMapping("/cars")
-    public String getCars(@Valid @RequestBody CarDTO car){
-        return car.toString();
+    public CarDTO getCars(@Valid @RequestBody CarDTO car){
+        System.out.println("usato getCars");
+        return new CarDTO(car);
     }
 
 }
